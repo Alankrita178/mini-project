@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: white; font-family: 'Times New Roman', Times, serif;">Art Institute of Chicago</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
+        <div class="d-flex justify-content-center align-items-center flex-grow-1">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" formControlName="searchInput" style="width: 50vh;">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            </div>
+            <div class="d-flex align-items-center ms-auto">
+              <button class="btn btn-secondary" type="submit" [routerLink]="'wishlist/'">Wishlist</button>
+            </div>
+      </div>
+    </div>
+  </nav>
+
+<div class="container mt-3 d-flex justify-content-center align-items-center flex-column">
+    <img src="https://www.artic.edu/iiif/2/{{artData?.image_id}}/full/843,/0/default.jpg" 
+     style="width:40vh;height:40vh">
+    <h1><b>{{artData?.title}}</b></h1>
+    <h3 style="font-family: 'Times New Roman', Times, serif;"><b>{{artData?.artist_title}}</b></h3>
+    <h3 style="font-family: 'Times New Roman', Times, serif;">{{artData?.artist_display}}</h3>
+    <p><i>({{artData?.publication_history}})</i></p>
+</div>

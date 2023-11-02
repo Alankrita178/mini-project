@@ -1,0 +1,35 @@
+<!-- <div *ngIf="wishlisted.length>0;"> -->
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: white; font-family: 'Times New Roman', Times, serif;">Art Institute of Chicago</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
+        <div class="d-flex justify-content-center align-items-center flex-grow-1">
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" formControlName="searchInput" style="width: 50vh;">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+          </div>
+          <div class="d-flex align-items-center ms-auto">
+            <button class="btn btn-secondary" type="submit" [routerLink]="'wishlist/'">Wishlist</button>
+          </div>
+      </div>
+    </div>
+  </nav>
+
+    <div *ngFor="let item of wishlist" >
+        <img src="https://www.artic.edu/iiif/2/{{item?.image_id}}/full/843,/0/default.jpg" style="width: 30vh; height: 30vh;padding-left: 2vh;padding-top: 2vh;">
+      <h4 style="padding-left: 2vh;">{{ item?.title }}</h4>
+      <p style="padding-left: 2vh;">{{ item?.artist_title }}</p>
+      <div style="padding-left: 2vh;">
+        <button class="btn" style="color: rgb(120, 116, 117); border:1.5px solid rgb(120, 116, 117);" (click)="removeFromWishlist(item)"><b>Remove</b></button>
+      </div>
+      
+    
+    </div>
+  <!-- </div> -->
+  
